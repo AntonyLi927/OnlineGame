@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.finalProject.OnlineGame.dao.UserDao">
+
+    <select id="getUserById" resultType="com.finalProject.OnlineGame.model.User">
+        select * from online_game.user where userId = #{userId}
+    </select>
+
+    <insert id="addUser" useGeneratedKeys="true" keyProperty="userId">
+        insert into online_game.user(userId, username, password, salt, email, isSignUp, avatarUrl, registrationTime)
+        values (#{userId},#{username},#{password},#{salt},#{email},#{isSignUp},#{avatarUrl},#{registrationTime})
+    </insert>
+
+
+
+
+
+</mapper>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.finalProject.OnlineGame.dao.LoginTicketDao">
+
+    <insert id="addLoginTicket" useGeneratedKeys="true" keyProperty="ticketId">
+        insert into online_game.login_ticket(userId, ticket, status, expiration)
+        values (#{userId},#{ticket},#{status},#{expiration})
+    </insert>
+
+
+
+
+
+</mapper>
