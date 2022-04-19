@@ -13,6 +13,14 @@
         values (#{userId},#{username},#{password},#{salt},#{email},#{isSignUp},#{avatarUrl},#{registrationTime})
     </insert>
 
+    <update id="updateUsername">
+        update online_game.user set username=#{username} where userId=#{userId}
+    </update>
+
+    <select id="getWords" resultType="string">
+        select * from online_game.words
+    </select>
+
 
 
 

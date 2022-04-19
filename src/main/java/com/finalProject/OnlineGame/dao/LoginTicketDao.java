@@ -8,4 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface LoginTicketDao {
     public void addLoginTicket(LoginTicket loginTicket);
+    public LoginTicket selectFromTicket(String ticket);
+
 }

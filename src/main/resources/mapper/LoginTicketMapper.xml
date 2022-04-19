@@ -9,6 +9,10 @@
         values (#{userId},#{ticket},#{status},#{expiration})
     </insert>
 
+    <select id="selectFromTicket" resultType="com.finalProject.OnlineGame.model.LoginTicket">
+        select * from online_game.login_ticket where ticket = #{ticket}
+    </select>
+
 
 
 

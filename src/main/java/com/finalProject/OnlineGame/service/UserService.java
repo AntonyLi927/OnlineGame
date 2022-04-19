@@ -17,14 +17,22 @@ public class UserService {
 
     public User signUpUserByDefault() {
         User user = new User();
-        user.setUserId(2); // to be deleted
-        user.setUsername("Antony");
+//        user.setUserId(2); // to be deleted
+        user.setUsername("User_" + CommonUtils.generateUUID().substring(0, 11));
         user.setEmail("123@12.com");
         user.setIsSignUp(0);
         user.setRegistrationTime(new Date().getTime());
-        //userDao.addUser(user);
+        userDao.addUser(user);
         return user;
     }
 
+    public User getUserById(Integer userId) {
+        return userDao.getUserById(userId);
+    }
+
+    public User updateUsername(Integer userId, String username) {
+        userDao.updateUsername(userId, username);
+        return userDao.getUserById(userId);
+    }
 
 }

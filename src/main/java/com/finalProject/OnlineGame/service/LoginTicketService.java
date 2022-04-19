@@ -18,10 +18,14 @@ public class LoginTicketService {
         LoginTicket loginTicket = new LoginTicket();
         loginTicket.setUserId(userId);
         loginTicket.setTicket(CommonUtils.generateUUID());
-        loginTicket.setExpiration(new Date(System.currentTimeMillis() + 1000 * 60).getTime());
+        loginTicket.setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 5).getTime());
         loginTicket.setStatus(1);
-        //loginTicketDao.addLoginTicket(loginTicket);
+        loginTicketDao.addLoginTicket(loginTicket);
         return loginTicket;
+    }
+
+    public LoginTicket selectFromTicket(String ticket) {
+        return loginTicketDao.selectFromTicket(ticket);
     }
 
 
